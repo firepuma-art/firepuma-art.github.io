@@ -87,6 +87,7 @@ footer {
 }
 
 img { border-radius: 8px; max-width: 100%; height: auto; }
+
 /* Banner principal Fire Puma */
 .banner {
   background: url('banner-firepuma.png') center/cover no-repeat;
