@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #0b0b10;
+  color: #e8e8e8;
+}
+
+header {
+  background: linear-gradient(90deg, #ff3d3d, #ff7043);
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav a:hover, nav a.active {
+  color: #00e5ff;
+}
+
+.hero {
+  text-align: center;
+  position: relative;
+  padding: 5rem 1rem;
+  background: radial-gradient(circle at 50% 50%, #1c1c27 0%, #0b0b10 80%);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #ff5252;
+  text-shadow: 0 0 10px #ff1744;
+}
+.hero p {
+  color: #a6f1ff;
+  font-size: 1.2rem;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 64, 64, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.portfolio .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  background: #1a1a23;
+  border: 2px solid #ff4f4f;
+  border-radius: 12px;
+  width: 300px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(255, 90, 90, 0.2);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #00e5ff;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #111118;
+  border-top: 1px solid #222;
+}
+
+img { border-radius: 8px; max-width: 100%; height: auto; }
