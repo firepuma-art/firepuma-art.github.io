@@ -127,6 +127,33 @@ img {
   z-index: 1; /* ensures nav shows above gradient */
 }
 
+/* Separate the hero text from the banner */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 2; /* makes sure text sits above gradients */
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 3rem); /* adaptive size */
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.3rem); /* adaptive size */
+  color: #a6f1ff;
+  margin-bottom: 2rem;
+}
+
+.hero, .about, .portfolio {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .about p {
   font-size: 1rem;
   line-height: 1.7;
@@ -154,5 +181,16 @@ img {
   .about p {
     font-size: 0.95rem;
     line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav a {
+    display: inline-block;
+    margin: 0.5rem;
   }
 }
