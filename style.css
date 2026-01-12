@@ -1,20 +1,30 @@
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* Base styles */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   background-color: #0b0b10;
   color: #e8e8e8;
+  line-height: 1.6;
 }
 
-/* --- Universal content width limiter --- */
+img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Universal content limiter */
 section, .about, .hero, .portfolio, footer {
-  max-width: 1100px; /* Keeps your content from becoming too wide */
-  margin: 0 auto;     /* Centers everything */
-  padding: 0 1.5rem;  /* Adds safe side‑space on small devices */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   box-sizing: border-box;
 }
 
+/* Header (gradient behind banner) */
 header {
   background: linear-gradient(90deg, #ff3d3d, #ff7043);
   padding: 1.2rem 2rem;
@@ -25,34 +35,75 @@ header {
   color: white;
 }
 
-nav a {
+/* Navigation (bottom banner menu) */
+.banner {
+  position: relative;
+  background: url('images/banner-desktop.png') center/cover no-repeat;
+  height: 45vh;
+  min-height: 320px;
+  max-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.9));
+  z-index: 0;
+}
+
+.banner nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.banner nav a {
   color: white;
-  margin-left: 1.2rem;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.05rem;
   transition: color 0.3s ease;
 }
-nav a:hover, nav a.active {
+
+.banner nav a:hover, .banner nav a.active {
   color: #00e5ff;
 }
 
+/* Hero section */
 .hero {
-  text-align: center;
   position: relative;
-  padding: 5rem 1rem;
-  background: radial-gradient(circle at 50% 50%, #1c1c27 0%, #0b0b10 80%);
+  text-align: center;
+  color: #fff;
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .hero h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: #ff5252;
   text-shadow: 0 0 10px #ff1744;
-}
-.hero p {
-  color: #a6f1ff;
-  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: #a6f1ff;
+  margin-bottom: 2rem;
+}
+
+/* Glow overlay for hero */
 .glow {
   position: absolute;
   top: 0;
@@ -64,12 +115,22 @@ nav a:hover, nav a.active {
   z-index: -1;
 }
 
+/* About section */
+.about p {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin: 0 auto 1.5rem auto;
+  max-width: 700px;
+}
+
+/* Portfolio cards */
 .portfolio .grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .card {
@@ -87,90 +148,28 @@ nav a:hover, nav a.active {
   border-color: #00e5ff;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1.5rem;
   background: #111118;
   border-top: 1px solid #222;
+  color: #bbb;
 }
 
-img {
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
+footer a {
+  color: #ff4f4f;
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  color: #00e5ff;
 }
 
-/* Banner principal Fire Puma */
-.banner {
-  position: relative; /* required for ::after */
-  background: url('images/banner-desktop.png') center/cover no-repeat;
-  height: 45vh; /* flexible height */
-  min-height: 320px;
-  max-height: 520px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-}
-
-.banner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.9));
-  z-index: 0;
-}
-
-.banner nav {
-  position: relative;
-  z-index: 1; /* ensures nav shows above gradient */
-}
-
-/* Separate the hero text from the banner */
-.hero {
-  position: relative;
-  text-align: center;
-  color: #fff;
-  padding: 4rem 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
-  z-index: 2; /* makes sure text sits above gradients */
-}
-
-.hero h2 {
-  font-size: clamp(2rem, 5vw, 3rem); /* adaptive size */
-  margin-bottom: 0.8rem;
-}
-
-.hero p {
-  font-size: clamp(1rem, 3vw, 1.3rem); /* adaptive size */
-  color: #a6f1ff;
-  margin-bottom: 2rem;
-}
-
-.hero, .about, .portfolio {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.about p {
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-  margin: 0 auto 1.2rem auto;
-  max-width: 700px;
-}
-
+/* Responsive breakpoints */
 @media (max-width: 1024px) {
   .banner {
     background-image: url('images/banner-tablet.png');
-  }
-}
-
-@media (max-width: 600px) {
-  .banner {
-    background-image: url('images/banner-mobile.png');
   }
 }
 
@@ -178,19 +177,29 @@ img {
   section, .about, .hero, .portfolio, footer {
     padding: 0 1rem;
   }
-  .about p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-}
 
-@media (max-width: 768px) {
   header {
     flex-direction: column;
     text-align: center;
   }
-  nav a {
-    display: inline-block;
-    margin: 0.5rem;
+
+  .banner nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .hero {
+    padding: 3.5rem 1rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    background-image: url('images/banner-mobile.png');
   }
 }
