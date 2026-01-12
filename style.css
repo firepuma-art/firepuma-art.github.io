@@ -90,21 +90,16 @@ img { border-radius: 8px; max-width: 100%; height: auto; }
 
 /* Banner principal Fire Puma */
 .banner {
-  background: url('banner-firepuma.png') center/cover no-repeat;
-  height: 420px; /* ajusta según tu imagen */
+  position: relative; /* required for ::after */
+  background: url('images/banner-desktop.png') center/cover no-repeat;
+  height: 45vh;        /* flexible height */
+  min-height: 320px;
+  max-height: 520px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   padding-bottom: 1rem;
-  position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-}
-
-.banner {
-  background: url('images/banner-desktop.png') center/cover no-repeat;
-  height: 35vh;
-  min-height: 250px;
-  max-height: 480px;
 }
 
 @media (max-width: 1024px) {
@@ -129,5 +124,5 @@ img { border-radius: 8px; max-width: 100%; height: auto; }
 
 .banner nav {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* ensures nav shows above gradient */
 }
