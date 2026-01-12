@@ -189,6 +189,10 @@ footer a:hover {
     padding-bottom: 0.8rem;
   }
 
+.banner nav {
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.3));
+}
+
   .hero {
     padding: 3.5rem 1rem;
   }
@@ -206,27 +210,20 @@ footer a:hover {
 
 /* --- FIX NAV ON MOBILE --- */
 @media (max-width: 768px) {
-  .banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* keeps nav pinned at bottom */
-  }
-
   .banner nav {
     position: absolute;
-    bottom: 0;               /* pins nav to bottom edge */
-    width: 100%;
+    bottom: 0;                 /* pins nav to bottom */
+    left: 50%;
+    transform: translateX(-50%);  /* truly centers horizontally */
+    width: 95%;                /* slight side‑space */
     background: rgba(0, 0, 0, 0.55);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;         /* allows two-line wrap if needed */
+    flex-wrap: wrap;
     gap: 1rem;
-    padding: 0.8rem 1rem;
-  }
-
-  .banner nav a {
-    font-size: 0.95rem;
+    padding: 0.8rem 0;
+    border-radius: 6px 6px 0 0;  /* optional rounding */
   }
 }
 
@@ -241,5 +238,21 @@ footer a:hover {
   }
   .hero p {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    max-width: 320px;      /* tighter column */
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+  }
+  .hero h2 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+  .hero p {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 }
