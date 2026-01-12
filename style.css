@@ -203,3 +203,43 @@ footer a:hover {
     background-image: url('images/banner-mobile.png');
   }
 }
+
+/* --- FIX NAV ON MOBILE --- */
+@media (max-width: 768px) {
+  .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* keeps nav pinned at bottom */
+  }
+
+  .banner nav {
+    position: absolute;
+    bottom: 0;               /* pins nav to bottom edge */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;         /* allows two-line wrap if needed */
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .banner nav a {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 3rem 1rem;
+    max-width: 340px;     /* tighter container */
+    margin: 0 auto;
+  }
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
