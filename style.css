@@ -169,6 +169,22 @@ footer a:hover {
   color: #00e5ff;
 }
 
+footer p {
+  margin: 0 auto;
+  font-size: 0.9rem;          /* slightly smaller text */
+  max-width: 85%;            /* keeps the line short on mobile */
+  word-wrap: break-word;     /* forces wrapping if the line is too long */
+  overflow-wrap: anywhere;   /* secondary wrap support */
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  footer p {
+    font-size: 0.8rem;       /* shrink font on small screens */
+    line-height: 1.4;
+  }
+}
+
 /* ---------- Text Width Control ---------- */
 .hero, .about, .portfolio {
   width: min(90%, 1000px);
