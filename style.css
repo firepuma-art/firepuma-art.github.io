@@ -1,7 +1,7 @@
-/* Import font */
+/* ✅ Import correct font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Base page setup */
+/* ---------- Base setup ---------- */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -23,7 +23,7 @@ section, .about, .hero, .portfolio, footer {
   box-sizing: border-box;
 }
 
-/* Header */
+/* ---------- Header ---------- */
 header {
   background: linear-gradient(90deg, #ff3d3d, #ff7043);
   padding: 1.2rem 2rem;
@@ -34,7 +34,7 @@ header {
   color: white;
 }
 
-/* Banner */
+/* ---------- Banner ---------- */
 .banner {
   position: relative;
   background: url('images/banner-desktop.png') center/cover no-repeat;
@@ -74,11 +74,12 @@ header {
   transition: color 0.3s ease;
 }
 
-.banner nav a:hover, .banner nav a.active {
+.banner nav a:hover,
+.banner nav a.active {
   color: #00e5ff;
 }
 
-/* HERO SECTION */
+/* ---------- Hero Section ---------- */
 .hero {
   position: relative;
   text-align: center;
@@ -99,6 +100,8 @@ header {
   font-size: clamp(1rem, 3vw, 1.3rem);
   color: #a6f1ff;
   margin-bottom: 2rem;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .glow {
@@ -112,16 +115,18 @@ header {
   z-index: -1;
 }
 
-/* ABOUT SECTION */
+/* ---------- About Section ---------- */
 .about p {
   font-size: 1rem;
   line-height: 1.7;
   text-align: justify;
   margin: 0 auto 1.5rem auto;
   max-width: 700px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
-/* PORTFOLIO */
+/* ---------- Portfolio ---------- */
 .portfolio .grid {
   display: flex;
   flex-wrap: wrap;
@@ -145,7 +150,7 @@ header {
   border-color: #00e5ff;
 }
 
-/* FOOTER */
+/* ---------- Footer ---------- */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -159,11 +164,12 @@ footer a {
   text-decoration: none;
   font-weight: 600;
 }
+
 footer a:hover {
   color: #00e5ff;
 }
 
-/* ---------- TEXT WIDTH CONTROL ---------- */
+/* ---------- Text Width Control ---------- */
 .hero, .about, .portfolio {
   width: min(90%, 1000px);
   margin: 0 auto;
@@ -178,7 +184,7 @@ footer a:hover {
   text-align: center;
 }
 
-/* ----------- RESPONSIVE BREAKPOINTS ----------- */
+/* ---------- Media Queries ---------- */
 @media (max-width: 1024px) {
   .banner {
     background-image: url('images/banner-tablet.png');
@@ -189,6 +195,7 @@ footer a:hover {
   section, .about, .hero, .portfolio, footer {
     padding: 0 1rem;
   }
+
   header {
     flex-direction: column;
     text-align: center;
@@ -215,7 +222,7 @@ footer a:hover {
   }
 
   .hero, .about, .portfolio {
-    width: 95%;
+    width: 90%;
     padding: 3rem 1rem;
   }
   .hero p, .about p, .portfolio p {
@@ -229,10 +236,12 @@ footer a:hover {
   .banner {
     background-image: url('images/banner-mobile.png');
   }
+
   .hero, .about, .portfolio {
-    width: 90%;
+    width: 85%;
     padding: 2.5rem 1rem;
   }
+
   .hero h2 {
     font-size: 1.4rem;
     line-height: 1.3;
@@ -242,3 +251,4 @@ footer a:hover {
     line-height: 1.4;
   }
 }
+
