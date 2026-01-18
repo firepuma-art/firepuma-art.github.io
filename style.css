@@ -25,7 +25,7 @@ section, .about, .hero, .portfolio, footer {
 
 /* ---------- Header ---------- */
 header {
-  background: linear-gradient(90deg, #40887c, #4b4c47);
+  background: linear-gradient(90deg, #40887c, #42434a);
   padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
