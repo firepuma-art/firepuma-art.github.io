@@ -5,7 +5,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #26353b;
+  background-color: #19191c;
   color: #e8e8e8;
   line-height: 1.6;
 }
@@ -25,7 +25,7 @@ section, .about, .hero, .portfolio, footer {
 
 /* ---------- Header ---------- */
 header {
-  background: linear-gradient(90deg, #40887c, #8ddfc9);
+  background: linear-gradient(90deg, #40887c, #4b4c47);
   padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
