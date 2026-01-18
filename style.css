@@ -1,58 +1,43 @@
-/* =========================
-   FONT
-========================= */
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* =========================
-   RESET & BASE
-========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Base page setup */
 body {
   font-family: 'Poppins', sans-serif;
+  margin: 0;
   background-color: #0b0b10;
   color: #e8e8e8;
   line-height: 1.6;
 }
 
 img {
+  border-radius: 8px;
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 
-/* =========================
-   LAYOUT SYSTEM
-========================= */
-section,
-footer {
-  width: 100%;
-  padding: 4rem 1.5rem;
-}
-
-.container {
+section, .about, .hero, .portfolio, footer {
   max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
-/* =========================
-   HEADER & BANNER
-========================= */
+/* Header */
 header {
   background: linear-gradient(90deg, #ff3d3d, #ff7043);
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   color: white;
 }
 
+/* Banner */
 .banner {
   position: relative;
-  background: url('images/banner-desktop.png') center / cover no-repeat;
+  background: url('images/banner-desktop.png') center/cover no-repeat;
   height: 45vh;
   min-height: 320px;
   max-height: 520px;
@@ -66,7 +51,7 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.9));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.9));
   z-index: 0;
 }
 
@@ -74,12 +59,11 @@ header {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  width: 100%;
   padding: 0.8rem 1rem;
-  background: rgba(0,0,0,0.45);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .banner nav a {
@@ -90,17 +74,18 @@ header {
   transition: color 0.3s ease;
 }
 
-.banner nav a:hover,
-.banner nav a.active {
+.banner nav a:hover, .banner nav a.active {
   color: #00e5ff;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO SECTION */
 .hero {
   position: relative;
-  overflow: hidden;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 4rem 1.5rem;
 }
 
 .hero h2 {
@@ -111,90 +96,132 @@ header {
 }
 
 .hero p {
-  max-width: 620px;
-  margin: 0 auto 2rem;
-  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-size: clamp(1rem, 3vw, 1.3rem);
   color: #a6f1ff;
+  margin-bottom: 2rem;
 }
 
 .glow {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255,64,64,0.15), transparent 70%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 64, 64, 0.15), transparent 70%);
   pointer-events: none;
   z-index: -1;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT SECTION */
 .about p {
-  max-width: 620px;
-  margin: 0 auto 1.5rem;
   font-size: 1rem;
   line-height: 1.7;
+  text-align: justify;
+  margin: 0 auto 1.5rem auto;
+  max-width: 700px;
 }
 
-/* =========================
-   PORTFOLIO
-========================= */
-.portfolio h2 {
-  margin-bottom: 2rem;
-}
-
+/* PORTFOLIO */
 .portfolio .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  justify-items: center;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
 .card {
   background: #1a1a23;
   border: 2px solid #ff4f4f;
   border-radius: 12px;
+  width: 300px;
   padding: 1rem;
-  width: 100%;
-  max-width: 320px;
-  box-shadow: 0 4px 16px rgba(255,90,90,0.2);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 90, 90, 0.2);
+  transition: transform 0.3s, border-color 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   border-color: #00e5ff;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer {
+  text-align: center;
+  padding: 1.5rem;
   background: #111118;
   border-top: 1px solid #222;
-  text-align: center;
-}
-
-footer p {
   color: #bbb;
-  margin-bottom: 0.5rem;
 }
 
 footer a {
   color: #ff4f4f;
-  font-weight: 600;
   text-decoration: none;
+  font-weight: 600;
 }
-
 footer a:hover {
   color: #00e5ff;
 }
 
-/* =========================
-   RESPONSIVE IMAGES
-========================= */
+/* ---------- TEXT WIDTH CONTROL ---------- */
+.hero, .about, .portfolio {
+  width: min(90%, 1000px);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hero p, .about p, .portfolio p {
+  width: min(90%, 650px);
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ----------- RESPONSIVE BREAKPOINTS ----------- */
 @media (max-width: 1024px) {
   .banner {
     background-image: url('images/banner-tablet.png');
+  }
+}
+
+@media (max-width: 768px) {
+  section, .about, .hero, .portfolio, footer {
+    padding: 0 1rem;
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner nav {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.8rem 0.4rem;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .banner nav a {
+    font-size: 0.95rem;
+  }
+
+  .hero, .about, .portfolio {
+    width: 95%;
+    padding: 3rem 1rem;
+  }
+  .hero p, .about p, .portfolio p {
+    width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
 
@@ -202,26 +229,16 @@ footer a:hover {
   .banner {
     background-image: url('images/banner-mobile.png');
   }
-
-  section,
-  footer {
+  .hero, .about, .portfolio {
+    width: 90%;
     padding: 2.5rem 1rem;
   }
-
-  .banner nav {
-    gap: 1rem;
-  }
-
-  .banner nav a {
-    font-size: 0.95rem;
-  }
-
   .hero h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.3;
   }
-
   .hero p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 }
-
